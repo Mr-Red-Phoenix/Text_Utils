@@ -43,16 +43,16 @@ export default function TextForm({showAlert={showAlert} ,heading = "Enter your t
         <textarea class="form-control" onChange={handleOnChange} style={{color:mode==='dark'?'white':'black',backgroundColor:mode==='dark'?'black':'white'}} value={text} id="exampleFormControlTextarea1" rows="10"></textarea>
         </div>
         <div className="button-group" style={{ display: 'flex', gap: '10px' }}>
-        <button className="btn btn primary"onClick={handleUpClick}style={{height: '50px' , width: '200px', backgroundColor: 'green', color: 'white', border: 'none' }}>Convert to Uppercase</button>
-        <button className="btn btn primary"onClick={handleLoClick}style={{height: '50px' , width: '200px', backgroundColor: 'blue', color: 'white', border: 'none' }}>Convert to Lowercase</button>
-        <button className="btn btn primary"onClick={handleInClick}style={{height: '50px' , width: '200px', backgroundColor: 'red', color: 'white', border: 'none' }}>Inverse Text</button>
-        <button className="btn btn primary"onClick={handleClearClick}style={{height: '50px' , width: '200px', backgroundColor: 'purple', color: 'white', border: 'none' }}>Clear Text</button>
+        <button className="btn btn primary mx-1 my-1"onClick={handleUpClick}style={{height: '50px' , width: '200px', backgroundColor: 'green', color: 'white', border: 'none' }}>Convert to Uppercase</button>
+        <button className="btn btn primary mx-1 my-1"onClick={handleLoClick}style={{height: '50px' , width: '200px', backgroundColor: 'blue', color: 'white', border: 'none' }}>Convert to Lowercase</button>
+        <button className="btn btn primary mx-1 my-1"onClick={handleInClick}style={{height: '50px' , width: '200px', backgroundColor: 'red', color: 'white', border: 'none' }}>Inverse Text</button>
+        <button className="btn btn primary mx-1 my-1"onClick={handleClearClick}style={{height: '50px' , width: '200px', backgroundColor: 'purple', color: 'white', border: 'none' }}>Clear Text</button>
         </div>
         <div className="container my-2"></div>
         <h2>Your text summary</h2>
         <b>
         <p>{text.trim().length === 0 ? 0 : text.trim().split(/\s+/).length} words, {text.length} characters</p>
-        <p>{0.008 * text.split(" ").length} Minutes</p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes</p>
         </b>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter something in text box."}</p>

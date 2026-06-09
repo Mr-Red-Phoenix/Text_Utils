@@ -1,6 +1,7 @@
 {
   "homepage": "https://Mr-Red-Phoenix.github.io/Text_Utils",
   "name": "Micro-Project",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
